@@ -67,6 +67,21 @@ class LinkedList {
     return false;
   }
 
+  //Reverse a Linked List
+  reverse() {
+    let prev = null;
+    let curr = this.head;
+
+    while (curr !== null) {
+      let next = curr.next; //we need ref to the node ahead of current.
+      curr.next = prev;
+
+      prev = curr;
+      curr = next;
+    }
+    this.head = prev;
+  }
+
   //Print Every Node value  in Linked List
   traverse() {
     let curr = this.head;
@@ -84,3 +99,11 @@ class LinkedList {
 }
 
 const ll = new LinkedList();
+ll.push(1);
+ll.push(34);
+ll.push(33);
+ll.push(21);
+ll.push(3);
+console.log(ll.traverse());
+ll.reverse();
+console.log(ll.traverse());
