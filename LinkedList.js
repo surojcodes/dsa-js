@@ -34,6 +34,17 @@ class LinkedList {
     prev.next = null;
     return curr.value;
   }
+  //Contains a value
+  contains(target) {
+    let curr = this.head;
+    while (curr !== null) {
+      if (curr.value === target) {
+        return true;
+      }
+      curr = curr.next;
+    }
+    return false;
+  }
   //Print Every Node value  in Linked List
   traverse() {
     let curr = this.head;
@@ -52,8 +63,8 @@ class LinkedList {
 
 const ll = new LinkedList();
 ll.push(21);
-ll.push(22);
-ll.push(23);
+ll.push(1);
+ll.push(2);
+ll.push(24);
 console.log(ll.traverse());
-console.log('Popped:', ll.pop());
-console.log(ll.traverse());
+console.log(ll.contains(1));
