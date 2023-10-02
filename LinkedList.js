@@ -45,6 +45,28 @@ class LinkedList {
     }
     return false;
   }
+
+  //Delete node with given value
+  delete(target) {
+    let curr = this.head;
+    let prev = null;
+    while (curr !== null) {
+      if (curr.value === target) {
+        //if the item to be removed is first item
+        //we will need to move head
+        if (prev === null) {
+          this.head = curr.next;
+          return true;
+        }
+        prev.next = curr.next;
+        return true;
+      }
+      prev = curr;
+      curr = curr.next;
+    }
+    return false;
+  }
+
   //Print Every Node value  in Linked List
   traverse() {
     let curr = this.head;
@@ -62,9 +84,3 @@ class LinkedList {
 }
 
 const ll = new LinkedList();
-ll.push(21);
-ll.push(1);
-ll.push(2);
-ll.push(24);
-console.log(ll.traverse());
-console.log(ll.contains(1));
