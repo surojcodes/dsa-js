@@ -31,10 +31,12 @@ class LinkedList {
       console.log('Linked List is empty.');
       return;
     }
+    let list = '';
     while (curr !== null) {
-      console.log(`${curr.value}=>`);
+      list += `${curr.value}=>`;
       curr = curr.next;
     }
+    return list;
   }
 }
 
