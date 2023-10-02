@@ -27,3 +27,5 @@ c.right = f;
 d   e   f
 
 */
+
+module.exports = a;
