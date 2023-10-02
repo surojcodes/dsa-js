@@ -6,7 +6,6 @@ class Node {
 }
 //in stack , simply push on top and pop from top (i.e. end of linked list)
 class Stack {
-  size = 0;
   constructor() {
     this.top = null;
   }
@@ -15,7 +14,6 @@ class Stack {
     const newNode = new Node(val);
     newNode.next = this.top;
     this.top = newNode;
-    this.size++;
   }
   pop() {
     if (this.isEmpty()) return;
