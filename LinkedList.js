@@ -23,7 +23,17 @@ class LinkedList {
     }
     curr.next = newNode;
   }
-
+  //Remove Last Element and return it
+  pop() {
+    let curr = this.head;
+    let prev;
+    while (curr.next !== null) {
+      prev = curr;
+      curr = curr.next;
+    }
+    prev.next = null;
+    return curr.value;
+  }
   //Print Every Node value  in Linked List
   traverse() {
     let curr = this.head;
@@ -41,3 +51,9 @@ class LinkedList {
 }
 
 const ll = new LinkedList();
+ll.push(21);
+ll.push(22);
+ll.push(23);
+console.log(ll.traverse());
+console.log('Popped:', ll.pop());
+console.log(ll.traverse());
