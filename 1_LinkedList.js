@@ -96,6 +96,20 @@ class LinkedList {
     }
     return list;
   }
+
+  [Symbol.iterator]() {
+    let curr = this.head;
+    return {
+      next() {
+        if (curr === null) return { value: undefined, done: true };
+        else {
+          let ret = { value: curr.value, done: false };
+          curr = curr.next;
+          return ret;
+        }
+      },
+    };
+  }
 }
 
 const ll = new LinkedList();
@@ -104,6 +118,6 @@ ll.push(34);
 ll.push(33);
 ll.push(21);
 ll.push(3);
-console.log(ll.traverse());
-ll.reverse();
-console.log(ll.traverse());
+for (let x of ll) {
+  console.log(x);
+}
