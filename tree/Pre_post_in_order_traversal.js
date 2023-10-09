@@ -1,4 +1,4 @@
-const tree = require('./6_Binary_Tree');
+const tree = require('./Binary_Tree');
 /*
     a
    / \
