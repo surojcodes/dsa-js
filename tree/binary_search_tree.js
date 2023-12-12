@@ -58,6 +58,15 @@ class BST {
   }
 }
 
+//min value in subtree
+function minValue(root) {
+  let temp = root;
+  while (temp.left != null) {
+    temp = temp.left;
+  }
+  return temp.val;
+}
+
 const bst = new BST();
 
 /*
@@ -77,4 +86,7 @@ bst.insert(90);
 bst.insert(25);
 
 // bst.traverse(); //45,22,86,12,25,47,90
-console.log(bst.contains(22));
+// console.log(bst.contains(22));
+
+console.log(minValue(bst.root)); //12
+console.log(minValue(bst.root.right)); //47
