@@ -36,6 +36,16 @@ class BST {
       }
     }
   }
+  contains(val) {
+    if (this.root === null) return false;
+    let temp = this.root;
+    while (temp) {
+      if (val === temp.val) return true;
+      if (val > temp.val) temp = temp.right;
+      else temp = temp.left;
+    }
+    return false;
+  }
   //breadth first traversal
   traverse() {
     const queue = [this.root];
@@ -66,4 +76,5 @@ bst.insert(47);
 bst.insert(90);
 bst.insert(25);
 
-bst.traverse(); //45,22,86,12,25,47,90
+// bst.traverse(); //45,22,86,12,25,47,90
+console.log(bst.contains(22));
