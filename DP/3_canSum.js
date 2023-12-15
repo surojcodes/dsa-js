@@ -7,7 +7,6 @@
 //Space: O(m) (height of tree)
 const canSum = (target, arr) => {
   if (target === 0) return true;
-  if (target < 0) return false;
   for (let num of arr) {
     //this decrease the branching factor a little but not so significant to change big(O)
     if (target >= num) {
@@ -30,7 +29,6 @@ const canSum = (target, arr) => {
 const canSumMemo = (target, arr, memo = {}) => {
   if (target in memo) return memo[target];
   if (target === 0) return true;
-  if (target < 0) return false;
   for (let num of arr) {
     if (target >= num) {
       if (canSum(target - num, arr, memo) === true) {
