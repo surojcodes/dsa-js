@@ -47,7 +47,7 @@ const howSumMemo = (target, numbers, memo = {}) => {
   if (target === 0) return [];
   for (let num of numbers) {
     if (target >= num) {
-      const res = howSum(target - num, numbers, memo);
+      const res = howSumMemo(target - num, numbers, memo);
       if (res !== null) {
         memo[target] = [...res, num];
         return memo[target];

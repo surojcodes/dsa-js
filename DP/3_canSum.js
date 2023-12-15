@@ -31,7 +31,7 @@ const canSumMemo = (target, arr, memo = {}) => {
   if (target === 0) return true;
   for (let num of arr) {
     if (target >= num) {
-      if (canSum(target - num, arr, memo) === true) {
+      if (canSumMemo(target - num, arr, memo) === true) {
         memo[target] = true;
         return memo[target];
       }
